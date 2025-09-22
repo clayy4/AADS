@@ -9,8 +9,21 @@ private:
 	int _cols;
 	int* _matrix;
 public:
-	//GrScImage() :{}
-	//operator[]
+	GrScImage(const int rows, const int cols, const bool is_fill) : _rows(rows), _cols(cols) {
+		_matrix = new int* [_rows * _cols];
+
+		if (is_fill) {
+			
+		}
+		else {
+			for (int r, c = 0; i < _rows, j < _cols; i++, j++) {
+				_matrix(r, c) = 0;
+			}
+			
+		}
+	}
+	T& operator()(int row, int col);
+
 	//operator+
 	//operator*
 	//operator-
