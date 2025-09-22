@@ -1,7 +1,6 @@
 #ifndef GRAYSCALE_HPP
 #define GRAYSCALE_HPP
 
-#include <random>
 #include <limits>
 #include "utils.hpp"
 
@@ -11,12 +10,12 @@ class GrScImage { //GrayScaleImage
 private:
 	int _rows;
 	int _cols;
-	int* _matrix;
+	T* _matrix;
 public:
 	GrScImage(const int rows, const int cols, const bool is_fill) : _rows(rows), _cols(cols) {
-		_matrix = new int* [_rows * _cols];
+		_matrix = new T[_rows * _cols];
 
-		Dice dice<T>(std::numeric_limits<T>::min(), std::numeric_limits<T>::max());
+		Dice<T> dice(std::numeric_limits<T>::min(), std::numeric_limits<T>::max());
 
 		if(is_fill){
 			for (int r = 0; r < _rows; r++) {

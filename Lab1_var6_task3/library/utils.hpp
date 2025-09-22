@@ -1,8 +1,7 @@
-#ifndef DICE_H
-#define DICE_H
+#ifndef UTILS_H
+#define UTILS_H
 
 #include <random>
-#include <cmath>
 
 template <typename T>
 class Dice {
@@ -16,7 +15,9 @@ public:
 
     Dice(const T min, const T max) : rand_gen(std::random_device{}()), dis(min, max) {}
 
-    T& roll();
+    T roll() {
+        return static_cast<T>(dis(rand_gen));
+    }
 };
 
-#endif // DICE_H
+#endif // UTILS_H
