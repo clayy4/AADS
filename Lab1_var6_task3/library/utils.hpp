@@ -1,11 +1,8 @@
-
-
 #ifndef DICE_H
 #define DICE_H
 
 #include <random>
 #include <cmath>
-#include <limits>
 
 template <typename T>
 class Dice {
@@ -17,10 +14,9 @@ public:
 
     Dice() = default;
 
-    Dice(const T min, const T max) : rand_gen(std::random_device{}()), dis(std::numeric_limits<T>::min(), std::numeric_limits<T>::max()) {}
+    Dice(const T min, const T max) : rand_gen(std::random_device{}()), dis(min, max) {}
 
-
-    T roll();
+    T& roll();
 };
 
 #endif // DICE_H

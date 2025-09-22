@@ -3,7 +3,7 @@
 
 #include <random>
 #include <limits>
-
+#include "utils.hpp"
 
 
 template <typename T>
@@ -16,14 +16,20 @@ public:
 	GrScImage(const int rows, const int cols, const bool is_fill) : _rows(rows), _cols(cols) {
 		_matrix = new int* [_rows * _cols];
 
-		if (is_fill) {
-			for (int r, c = 0; i < _rows, j < _cols; i++, j++) {
-				_matrix(r, c) = rand;
+		Dice dice<T>(std::numeric_limits<T>::min(), std::numeric_limits<T>::max());
+
+		if(is_fill){
+			for (int r = 0; r < _rows; r++) {
+				for (int c = 0; c < _cols; c++) {
+					_matrix[r * c + c] = dice.roll();
+				}
 			}
 		}
 		else {
-			for (int r, c = 0; i < _rows, j < _cols; i++, j++) {
-				_matrix(r, c) = 0;
+			for (int r = 0; r < _rows; r++) {
+				for (int c = 0; c < _cols; c++) {
+					_matrix[r * c + c] = 0;
+				}
 			}
 		}
 	}
