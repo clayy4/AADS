@@ -7,7 +7,7 @@ template <typename T>
 class Dice {
 private:
     std::mt19937 rand_gen;                     ///< Генератор случайных чисел
-    std::uniform_real_distribution<T> dis;    ///< Распределение для генерации чисел
+    std::uniform_int_distribution<T> dis;    ///< Распределение для генерации чисел
 
 public:
 

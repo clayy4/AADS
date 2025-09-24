@@ -4,7 +4,9 @@
 
 int main() {
 
-	GrScImage<float> halfgray(10, 5,1);
-	//std::cout << halfgray(1, 3);
+	GrScImage<int> halfgray(10, 5,1);
+	std::cout << halfgray << "\n\n";
+	!halfgray;
+	std::cout << halfgray;
 	return 0;
 }
